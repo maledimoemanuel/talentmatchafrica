@@ -1,12 +1,3 @@
-/* General styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #0d1117;
-    color: white;
-}
-
 /* Navbar */
 .navbar {
     display: flex;
@@ -19,6 +10,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
+    box-sizing: border-box;
 }
 
 .navbar .logo {
@@ -26,12 +18,14 @@ body {
     font-weight: bold;
     color: rgb(240, 160, 13);
     text-decoration: none;
+    margin-left: 20px;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
     gap: 20px;
+    margin-right: 20px;
 }
 
 .nav-links li {
@@ -49,7 +43,7 @@ body {
     color: orange;
 }
 
-/* Navbar - Mobile */
+/* Mobile View */
 .menu-toggle {
     display: none;
     font-size: 1.5rem;
@@ -62,6 +56,42 @@ body {
     font-size: 1.5rem;
     color: white;
     cursor: pointer;
+}
+
+/* Responsive Navbar - Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
 }
 
 /* Hero Section */
@@ -214,6 +244,12 @@ body {
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px;
     }
 
     .nav-links.active {
@@ -231,7 +267,6 @@ body {
         right: 20px;
     }
 }
-
 
 @media (max-width: 480px) {
     .home-grid {
