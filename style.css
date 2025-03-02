@@ -15,7 +15,7 @@ body {
 /* Navbar */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Instead of space-around */
+    justify-content: space-between; 
     align-items: center;
     padding: 1rem;
     background: #161b22;
