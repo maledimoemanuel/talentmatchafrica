@@ -216,12 +216,50 @@ h3 {
     margin-bottom: 20px;
 }
 
-/* About Us Section */
-#about p {
-    font-size: 1.2rem;
+/* About Us */
+#about {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: #161b22;
+    color: white;
+}
+
+.about-content {
     max-width: 800px;
     margin: auto;
+    text-align: left;
+}
+
+.about-content h4 {
+    font-size: 1.8rem;
+    color: rgb(240, 160, 13);
+    margin-top: 20px;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
     line-height: 1.6;
+}
+
+.about-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-content ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.about-content ul li::before {
+    content: "✔";
+    color: orange;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
 }
 
 /* Services Section */
