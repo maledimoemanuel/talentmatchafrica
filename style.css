@@ -205,13 +205,82 @@ html {
 .grid-item:hover {
     transform: translateY(-10px);
 }
-
-/* General Section Styling */
+u
 section {
-    padding: 4rem 2rem;
-    text-align: center;
+    padding: 2rem;
+    background-color: #161b22;
+    margin-bottom: 2rem;
 }
 
+/* About Us Section Grid */
+#about-us .about-us-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three columns */
+    gap: 2rem;
+}
+
+#about-us .about-us-content > div {
+    background-color: #2c3e50;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+#about-us h4 {
+    margin-bottom: 1rem;
+}
+
+#services .services-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three columns */
+    gap: 2rem;
+}
+
+#services .service-card {
+    background-color: #2c3e50;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+#services h4 {
+    margin-bottom: 1rem;
+}
+
+#jobs .job-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 2rem;
+}
+
+#jobs .job-card {
+    background-color: #2c3e50;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+#jobs .apply-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #2980b9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+#jobs .apply-btn:hover {
+    background-color: #3498db;
+}
+
+@media (max-width: 767px) {
+    #about-us .about-us-content,
+    #services .services-content,
+    #jobs .job-list {
+        display: block; 
+    }
+    #jobs .job-card {
+        margin-bottom: 1rem;
+    }
+}
 h3 {
     font-size: 2rem;
     color: rgb(240, 160, 13);
