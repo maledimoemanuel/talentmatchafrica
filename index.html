@@ -29,7 +29,7 @@
         </div>
     </section>
 
-    <!-- Home Section -->
+    <!-- Home Section (Grid Layout) -->
     <section id="home">
         <h3>What We Do</h3>
         <div class="home-grid">
@@ -95,7 +95,6 @@
             navLinks.classList.toggle("active");
         }
 
-        // Handle form submission
         document.addEventListener("DOMContentLoaded", () => {
             document.querySelector(".menu-toggle").addEventListener("click", toggleMenu);
 
@@ -103,7 +102,7 @@
             const formMessage = document.getElementById("formMessage");
 
             form.addEventListener("submit", function(event) {
-                event.preventDefault(); // Prevent page reload
+                event.preventDefault(); 
 
                 const name = document.getElementById("name").value.trim();
                 const email = document.getElementById("email").value.trim();
