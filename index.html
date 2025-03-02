@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TalentMatch Africa</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="main">
-        <!-- Navbar -->
-
     <!-- Navbar -->
     <nav class="navbar">
         <a href="#" class="logo">TMA</a>
@@ -23,74 +20,116 @@
         </ul>
     </nav>
 
-        <!-- Hero Section -->
-       <section id="hero">
-    <div class="hero-content">
-        <h1>Connecting Africa’s Best Talent with Global Opportunities</h1>
-        <p>Your journey to remote work starts here.</p>
-        <a href="#contact" class="hero-btn">Get Started</a>
-    </div>
-</section>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Connecting Africa’s Best Talent with Global Opportunities</h1>
+            <p>Your journey to remote work starts here.</p>
+            <a href="#contact" class="hero-btn">Get Started</a>
+        </div>
+    </section>
 
-        <!-- Home Section with Grid -->
-        <section id="home">
-            <h3>What We Do</h3>
-            <div class="home-grid">
-                <div class="grid-item">
-                    <h4>🌍 Global Connections</h4>
-                    <p>We link skilled African professionals with international employers.</p>
-                </div>
-                <div class="grid-item">
-                    <h4>💼 Remote Work</h4>
-                    <p>Specializing in remote hiring to eliminate geographical barriers.</p>
-                </div>
-                <div class="grid-item">
-                    <h4>📊 Multiple Industries</h4>
-                    <p>Connecting talent across tech, finance, digital marketing, and more.</p>
-                </div>
-                <div class="grid-item">
-                    <h4>💰 Cost-Effective Hiring</h4>
-                    <p>Providing top-tier African talent at competitive rates.</p>
-                </div>
+    <!-- Home Section -->
+    <section id="home">
+        <h3>What We Do</h3>
+        <div class="home-grid">
+            <div class="grid-item">
+                <h4>🌍 Global Connections</h4>
+                <p>We link skilled African professionals with international employers.</p>
             </div>
-        </section>
+            <div class="grid-item">
+                <h4>💼 Remote Work</h4>
+                <p>Specializing in remote hiring to eliminate geographical barriers.</p>
+            </div>
+            <div class="grid-item">
+                <h4>📊 Multiple Industries</h4>
+                <p>Connecting talent across tech, finance, digital marketing, and more.</p>
+            </div>
+            <div class="grid-item">
+                <h4>💰 Cost-Effective Hiring</h4>
+                <p>Providing top-tier African talent at competitive rates.</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Contact Page -->
-        <section id="contact">
-            <h3>Contact Us</h3>
-            <p>We'd love to hear from you!</p>
-            <div class="contact-form">
-                <form>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" required/> 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" required/>
-                    <label for="message">Message:</label>
-                    <textarea id="message" rows="4" required></textarea>
-                    <input type="submit" value="Submit"/>
-                </form>
-            </div>
-        </section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h3>Contact Us</h3>
+        <p>We'd love to hear from you!</p>
+        <div class="contact-form">
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required/> 
+                <label for="email">Email:</label>
+                <input type="email" id="email" required/>
+                <label for="message">Message:</label>
+                <textarea id="message" rows="4" required></textarea>
+                <input type="submit" value="Submit"/>
+            </form>
+        </div>
+        <p id="formMessage" class="hidden">Your message has been sent successfully!</p>
+    </section>
 
-        <!-- Footer -->
-        <section class="footer">
-            <h1>TalentMatch Africa</h1>
-            <div class="sec">
-                <h5>Sandton</h5>
-                <a href="mailto:info@talentmatchafrica.io">info@talentmatchafrica.io</a>
-                <a href="tel:0126252873">012 625 2873</a>
-                <p>35 Ferguson Rd, Illovo, Sandton</p>
-            </div>
-            <div class="thir">
-                <p>FOLLOW US!</p>
-                <i class="fa fa-facebook"></i>
-                <i class="fa fa-instagram"></i>
-                <i class="fa fa-twitter"></i>
-                <i class="fa fa-linkedin"></i>
-            </div>
-        </section>
-    </div>
+    <!-- Footer -->
+    <section class="footer">
+        <h1>TalentMatch Africa</h1>
+        <div class="sec">
+            <h5>Sandton</h5>
+            <a href="mailto:info@talentmatchafrica.io">info@talentmatchafrica.io</a>
+            <a href="tel:0126252873">012 625 2873</a>
+            <p>35 Ferguson Rd, Illovo, Sandton</p>
+        </div>
+        <div class="thir">
+            <p>FOLLOW US!</p>
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector(".nav-links");
+            navLinks.classList.toggle("active");
+        }
+
+        // Handle form submission
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.querySelector(".menu-toggle");
+            menuToggle.addEventListener("click", toggleMenu);
+
+            const form = document.getElementById("contactForm");
+            const formMessage = document.getElementById("formMessage");
+
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); 
+
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const message = document.getElementById("message").value.trim();
+
+                if (name === "" || email === "" || message === "") {
+                    alert("Please fill in all fields.");
+                    return;
+                }
+
+
+                console.log("Form Submitted:", { name, email, message });
+
+
+                formMessage.classList.remove("hidden");
+                formMessage.style.color = "green";
+
+
+                form.reset();
+
+                setTimeout(() => {
+                    formMessage.classList.add("hidden");
+                }, 3000);
+            });
+        });
+    </script>
 </body>
 </html>
